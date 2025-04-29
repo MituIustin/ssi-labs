@@ -1,0 +1,43 @@
+
+
+
+
+2
+
+b'\x88\x10\x86\xe2\xf3\xaai)\x9fz\xcb\xf0h4\xa4\xec\x88\x10\x86\xe2\xf3\xaai)\x9fz\xcb\xf0h4\xa4\xec\x88\x10\x86\xe2\xf3\xaai)\x9fz\xcb\xf0h4\xa4\xec'
+
+a) bytes random
+b) ECB (Electronic Codebook), adica blocurile criptate sunt identice
+c) nu, deoarece nu este sigur
+d) cheia are 16 bytes, dimensiunea blocului tot pe 16 bytes
+e) 
+
+from Crypto.Cipher import AES
+
+key = b'0 cheie oarecare'
+data = b'test'
+
+while len(data) % 16 != 0:
+    data += b' '
+
+cipher = AES.new(key, AES.MODE_ECB)
+ciphertext = cipher.encrypt(data)
+print(ciphertext)
+
+d) 
+
+
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad
+from Crypto.Random import get_random_bytes
+
+key = b'0 cheie oarecare'
+data = b'test'
+
+data = pad(data, AES.block_size)
+
+iv = get_random_bytes(16)
+
+cipher = AES.new(key, AES.MODE_CBC, iv)
+ciphertext = cipher.encrypt(data)
+print(iv + ciphertext)
