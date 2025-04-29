@@ -1,0 +1,33 @@
+
+
+1
+
+A - A
+B - F
+C - A
+D - A
+E - F
+F - F
+G - F deoarece este un MD5
+
+
+
+3
+
+31)
+parole stocate intr o lista
+cheie publica
+aceeasi cheie
+
+32)
+user hash uit
+coliziuni ? 
+
+33)
+SHA256 nu are salt
+
+34)
+trebuie generat cate un salt pentru fiecare
+
+35)
+md5 e foarte slab din cauza coliziunilor
